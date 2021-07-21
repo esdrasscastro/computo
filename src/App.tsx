@@ -1,12 +1,11 @@
 import Routes from './routes';
-import GlobalStyles from './GlobalStyles'
+import { Theme } from './components'
 
 function App() {
   return (
-   <>
-    <GlobalStyles />
+   <Theme.Default>
     <Routes />
-   </>
+   </Theme.Default>
   );
 }
 
