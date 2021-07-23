@@ -64,7 +64,7 @@ export const setSizes = (sizes: string | number | Array<string> | Array<number>)
   }
 }
 
-const rem = (value: string | number, base = 16): string => {
+export const rem = (value: string | number, base = 16): string => {
   const convertRem = (v: string | number) => typeof v === 'number' ? `${v / base}rem`: `${parseFloat(v) / base}rem`;
   
   if(typeof value === 'number') {
@@ -77,7 +77,7 @@ const rem = (value: string | number, base = 16): string => {
     }
   }
 
-  return '1rem';
+  return value;
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -92,6 +92,26 @@ const GlobalStyle = createGlobalStyle`
     --default-padding: 0 1em;
     --initial-menu-position: calc(-100vw - 25%);
     --menu-width: calc(100vw - 25%);
+
+    // Colors
+    --primary-color: rgba(13, 24, 33, 1);
+    --secondary-color: rgba(52, 73, 102, 1);
+    --terciary-color: rgba(230, 170, 206, 1);
+    --primary-font-color: rgba(95, 93, 110, 1);
+    --secondary-font-color: rgba(240, 244, 239, 1);
+    --terciary-font-color: rgba(191, 204, 148, 1);
+
+    @media (min-width: ${viewport['mobile']}px) {
+      font-size: 32px;
+    }
+
+    @media (min-width: ${viewport['tablet']}px) {
+      font-size: 24px;
+    }
+
+    @media (min-width: ${viewport['desktop']}px) {
+      font-size: 16px;
+    }
   }
 
   html {
@@ -104,6 +124,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     background-color: #fff;
+    font-size: 16px;
   }
 
   *, *:before, *:after {
@@ -118,6 +139,7 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--secondary-font-color);
   }
 
   code {

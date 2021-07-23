@@ -1,9 +1,7 @@
-import { MouseEventHandler } from 'react';
-
 interface MenuProps {
     children?: React.ReactNode;
     display?: string;
-    toggleMenu?: MouseEventHandler<HTMLButtonElement>;
+    width?: string|number;
 }
 
 export default MenuProps

@@ -1,16 +1,23 @@
 import styled from "styled-components";
+import { applyBreakpoints, applyStyle } from "../../../../../../GlobalStyles";
 
 import MenuProps from "./interfaces";
 
 const StyledMenu = styled.menu<MenuProps>`
-    flex: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: var(--menu-width);
-    background-color: aqua;
-    display: ${({display}) => display};
+    width: ${({width}) => width};
+
+    ${applyStyle}
+    ${applyBreakpoints}
+`;
+
+export const Circle = styled.div`
+    position: absolute;
+    width: 85px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    bottom: -30px;
+    z-index: -1;
 `;
 
 export default StyledMenu;

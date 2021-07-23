@@ -18,7 +18,8 @@ Container.defaultProps = {
     alignitems: 'center',
     flex: '1 auto',
     alignself: 'flex-start',
-    width: '100%'
+    width: '100%',
+    position: 'relative'
 }
 
 export default Container;

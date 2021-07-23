@@ -1,31 +1,34 @@
 import React from 'react';
 import MaterialIcon from '@material/react-material-icon';
 
-import StyledMenu from './style';
-import { Container, Button } from '../../../../..';
+import StyledMenu, { Circle } from './style';
+import { Container, Link } from '../../../../..';
 
 import MenuProps from './interfaces';
 
-const Menu: React.FunctionComponent<MenuProps> = ({children, toggleMenu,...props}) => {
+const Menu: React.FunctionComponent<MenuProps> = ({children, ...props}) => {
   return (
     <StyledMenu {...props}>
-      <Container width="100%">
-        <Container direction="row" justify="flex-end" flex="none" padding="10px">
-          <Button onClick={toggleMenu}>
-            <MaterialIcon icon="close" />
-          </Button>
-        </Container>
-        <Container>
-          Menu
-        </Container>
+      <Container
+        direction="row"
+        width="100%"
+        justify="space-evenly"
+      >
+        <Link color="var(--secondary-font-color)" href="#1"><MaterialIcon icon="home" /></Link>
+        <Link color="var(--secondary-font-color)" href="#2"><MaterialIcon icon="local_shipping" /></Link>
+        <Link margin={[-10,0,0,0]} fontSize={32} color="var(--terciary-font-color)" href="#3">
+          <Circle />
+          <MaterialIcon icon="monetization_on" />
+        </Link>
+        <Link color="var(--secondary-font-color)" href="#4"><MaterialIcon icon="contacts" /></Link>
+        <Link color="var(--secondary-font-color)" href="#5"><MaterialIcon icon="help_center" /></Link>
       </Container>
     </StyledMenu>
   );
 }
 
 Menu.defaultProps = {
-  display: 'none',
-  toggleMenu: () => {}
+  width: '100%'
 }
 
 export default Menu;

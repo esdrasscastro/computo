@@ -1,8 +1,9 @@
 import React from 'react';
 import StyledMain from './style';
+import GlobalProps from '../../../../global-interfaces';
 
-const Main: React.FC = (props) => {
-  return <StyledMain>{props.children}</StyledMain>;
+const Main: React.FunctionComponent<GlobalProps> = ({children, ...props}) => {
+  return <StyledMain {...props}>{children}</StyledMain>;
 }
 
 export default Main;
