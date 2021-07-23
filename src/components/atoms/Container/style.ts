@@ -21,7 +21,8 @@ const StyledContainer = styled.div<ContainerProps>`
     right: ${({right}) => right && setSizes(right)};
     color: ${({color}) => color};
     background-color: ${({bgcolor}) => bgcolor};
-    
+    box-shadow: ${({shadow}) => shadow};
+
     ${applyStyle}
     ${applyBreakpoints}
 `;

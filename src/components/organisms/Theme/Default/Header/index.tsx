@@ -17,6 +17,7 @@ const Header: React.FunctionComponent = () => {
         bottom="0"
         top="calc(100vh - var(--header-height))"
         direction="row-reverse"
+        shadow="1px -1px 10px var(--primary-color)"
         breakpoints={{
           tablet: css`
             flex-direction: row;
@@ -24,6 +25,7 @@ const Header: React.FunctionComponent = () => {
             top: initial;
             bottom: initial;
             left: initial;
+            box-shadow: none;
           `
         }}
       >

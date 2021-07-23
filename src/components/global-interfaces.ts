@@ -25,6 +25,7 @@ interface GlobalProps {
     right?: string|number;
     color?: string;
     bgcolor?: string;
+    shadow?: string;
     children?: React.ReactNode;
 }
 
