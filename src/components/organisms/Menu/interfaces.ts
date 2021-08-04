@@ -1,4 +1,4 @@
-import GlobalProps from '../../../../../global-interfaces'
+import GlobalProps from '../../global-interfaces'
 
 interface MenuProps extends GlobalProps {
     children?: React.ReactNode;

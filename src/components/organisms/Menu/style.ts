@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { applyBreakpoints, applyStyle, setSizes } from "../../../GlobalStyles";
+import { Container } from "../../atoms";
+import MenuProps from "./interfaces";
 
-import ContainerProps from './interfaces';
-import {applyBreakpoints, applyStyle, setSizes} from '../../../GlobalStyles';
-
-const StyledContainer = styled.div<ContainerProps>`
+const StyledMenu = styled.menu<MenuProps>`
     width: ${({width}) => width && setSizes(width)};
     height: ${({height}) => height && setSizes(height)};
     flex: ${({flex}) => flex};
@@ -28,20 +28,31 @@ const StyledContainer = styled.div<ContainerProps>`
     ${applyBreakpoints}
 `;
 
-StyledContainer.defaultProps = {
+export const Circle = styled(Container)`
+    position: absolute;
+    width: 85px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    bottom: -30px;
+    z-index: -1;
+
+    ${applyStyle}
+    ${applyBreakpoints}
+`;
+
+StyledMenu.defaultProps = {
+    width: '100%',
+    height: 'var(--header-height)',
+    padding: 0,
     display: 'flex',
     direction: 'column',
     flexwrap: 'nowrap',
     aligncontent: 'center',
     justify: 'flex-start',
     alignitems: 'center',
-    flex: '1 auto',
     alignself: 'flex-start',
-    width: '100%',
-    position: 'relative',
-    height: 'auto'
-}
+    position: 'relative'
+  }
 
-export {
-    StyledContainer
-}
+export default StyledMenu;

@@ -1,8 +1,8 @@
 import { Component } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Main from "./Main";
-import { Container } from "../../..";
+import Header from "../../organisms/Header";
+import Footer from "../../organisms/Footer";
+import Main from "../../organisms/Main";
+import { Container } from "../../atoms";
 import { css } from "styled-components";
 
 class Default extends Component {

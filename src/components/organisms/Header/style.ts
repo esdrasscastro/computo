@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { applyBreakpoints, applyStyle, setSizes } from '../../../GlobalStyles';
 
-import LinkProps from './interfaces';
+import GlobalProps from '../../global-interfaces';
 
-const LinkType = ({href, children, ...props}: LinkProps): any => <a href={href} {...props}>{children}</a>
-
-const StyledLink = styled(LinkType)`
-    text-decoration: ${({decoration}) => decoration};
+const StyledHeader = styled.header<GlobalProps>`
     width: ${({width}) => width && setSizes(width)};
+    height: ${({height}) => height && setSizes(height)};
     flex: ${({flex}) => flex};
     display: ${({display}) => display};
     flex-direction: ${({direction}) => direction};
@@ -17,7 +15,6 @@ const StyledLink = styled(LinkType)`
     align-items: ${({alignitems}) => alignitems};
     align-self: ${({alignself}) => alignself};
     padding: ${({padding}) => padding && setSizes(padding)};
-    margin: ${({margin}) => margin && setSizes(margin)};
     position: ${({position}) => position};
     top: ${({top}) => top && setSizes(top)};
     left: ${({left}) => left && setSizes(left)};
@@ -25,23 +22,24 @@ const StyledLink = styled(LinkType)`
     right: ${({right}) => right && setSizes(right)};
     color: ${({color}) => color};
     background-color: ${({bgcolor}) => bgcolor};
-
-    > * {
-        font-size: ${({fontSize}) => fontSize && setSizes(fontSize)};
-    }
+    box-shadow: ${({shadow}) => shadow};
 
     ${applyStyle}
     ${applyBreakpoints}
 `;
 
-StyledLink.defaultProps = {
-    href: '#',
-    fontSize: 16,
-    color: 'var(--secondary-color)',
-    flex: '1 auto',
+StyledHeader.defaultProps = {
+    width: '100%',
+    height: 'var(--header-height)',
+    padding: 0,
     display: 'flex',
-    justify: 'center',
-    decoration: 'none'
-};
+    direction: 'column',
+    flexwrap: 'nowrap',
+    aligncontent: 'center',
+    justify: 'flex-start',
+    alignitems: 'center',
+    alignself: 'flex-start',
+    position: 'relative'
+}
 
-export default StyledLink;
+export default StyledHeader;

@@ -9,17 +9,4 @@ const Container: React.FunctionComponent<ContainerProps> = ({children, ...props}
     );
 }
 
-Container.defaultProps = {
-    display: 'flex',
-    direction: 'column',
-    flexwrap: 'nowrap',
-    aligncontent: 'center',
-    justify: 'flex-start',
-    alignitems: 'center',
-    flex: '1 auto',
-    alignself: 'flex-start',
-    width: '100%',
-    position: 'relative'
-}
-
 export default Container;

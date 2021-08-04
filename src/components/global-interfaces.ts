@@ -16,6 +16,7 @@ interface GlobalProps {
     alignself?: string;
     padding?: string|number|Array<number>|Array<string>;
     width?: string|number|Array<number>|Array<string>;
+    height?: string|number|Array<number>|Array<string>;
     margin?: string|number|Array<number>|Array<string>;
     breakpoints?: Breakpoints;
     position?: string;

@@ -1,5 +1,5 @@
 import Routes from './routes';
-import { Theme } from './components'
+import * as Theme from './components'
 
 function App() {
   return (

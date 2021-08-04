@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import TextProps from "./interfaces";
-import {fontWeight, setSizes} from "../../../GlobalStyles";
+import {applyBreakpoints, applyStyle, fontWeight, setSizes} from "../../../GlobalStyles";
 
 const TextType = ({type, children, ...props}: TextProps): any => {
     switch(type) {
@@ -22,6 +22,14 @@ const StyledText = styled(TextType)`
     background-color: ${({bgcolor}) => bgcolor};
     font-weight: ${({weight}) => weight && fontWeight(weight)};
     font-size: ${({fontSize}) => fontSize && setSizes(fontSize)};
+
+    ${applyStyle}
+    ${applyBreakpoints}
 `;
+
+StyledText.defaultProps = {
+    type: 'p',
+    fontSize: '1rem'
+}
 
 export {StyledText};

@@ -124,7 +124,6 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     background-color: #fff;
-    font-size: 16px;
   }
 
   *, *:before, *:after {
